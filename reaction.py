@@ -22,6 +22,7 @@ for toot in toots:
 	if toot.account.id == 45761:
 		exit()
 	if toot.content == '<p>ﾊﾂﾈﾐｸ</p>':
-		pprint.pprint(mastodon.status_favourite(toot.id))
+		mastodon.status_reblog(toot.id)
+		print('reblog:' + '\tid :' + str(toot.account.id) + '\tname :' + toot.account.display_name)
+		mastodon.status_favourite(toot.id)
 		print('favourite:' + '\tid :' + str(toot.account.id) + '\tname :' + toot.account.display_name)
-
