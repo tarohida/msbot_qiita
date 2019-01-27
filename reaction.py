@@ -21,8 +21,9 @@ for toot in toots:
 	#print(toot.content)
 	if toot.account.id == 45761:
 		exit()
+
 	if toot.content == '<p>ﾊﾂﾈﾐｸ</p>':
 		mastodon.status_reblog(toot.id)
-		print('reblog:' + '\tid :' + str(toot.account.id) + '\tname :' + toot.account.display_name)
 		mastodon.status_favourite(toot.id)
-		print('favourite:' + '\tid :' + str(toot.account.id) + '\tname :' + toot.account.display_name)
+#		if toot.account.id == 60562:
+#			mastodon.status_post(toot, '@hatsune_bot ブチ殺すぞ…… kill you')
