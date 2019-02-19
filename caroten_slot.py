@@ -11,8 +11,11 @@ class Carotenslot:
 	nums = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん']
 	caro = 'かろ'
 
-	def __init__(self, client_id, access_token, api_base_url):
-		self.mastodon = Mastodon(client_id, access_token, api_base_url)
+	def __init__(self):
+		self.mastodon = Mastodon(
+			client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt", 
+			access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt",
+			api_base_url = "https://qiitadon.com") #インスタンス
 
 	def run(self, delay):
 		self.mastodon.toot('carotenslot発動！！')
@@ -22,14 +25,12 @@ class Carotenslot:
 
 		for selected_num in selected_nums:
 			time.sleep(delay)
-			mastodon.toot(self.caro + selected_num + '!')
+			self.mastodon.toot(self.caro + selected_num + '!')
 			if selected_num != 'かろてん':
 				return False 
 		
 		return True
 
-	def test(self ):
-		print(self.mastodon)
 			
 	def congratulations(self):
 		self.mastodon.toot('おめでとう！！')
@@ -40,13 +41,12 @@ api_base_url = "https://qiitadon.com"
 
 delay = 3
 
-carotenslot = Carotenslot(client_id, access_token, api_base_url)
-carotenslot.test()
+carotenslot = Carotenslot()
 
-#result = carotenslot.run(delay)
-#
-#if result:
-#	carotenslot.congratulations()
+result = carotenslot.run(delay)
+
+if result:
+	carotenslot.congratulations()
 
 	
 #	mastodon.toot("ﾊﾂﾐﾈｸ") #ここを変える
