@@ -8,32 +8,37 @@ from mastodon import Mastodon
 
 class Carotenslot:
 
-	nums = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん']
-	caro = 'かろ'
+    num1 = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん','てん','てん','てん','てん','てん','てん',]
+    num2 = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん','てん','てん']
+    caro = 'かろ'
 
-	def __init__(self):
-		self.mastodon = Mastodon(
-			client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt", 
-			access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt",
-			api_base_url = "https://qiitadon.com") #インスタンス
+    def __init__(self):
+        self.mastodon = Mastodon(
+            client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt", 
+            access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt",
+            api_base_url = "https://qiitadon.com") #インスタンス
 
-	def run(self, delay):
-		self.mastodon.toot('carotenslot発動！！')
-		time.sleep(delay)
-		self.mastodon.toot(self.caro + 'てん' + '!')
-		selected_nums = random.sample(self.nums,2)
+    def run(self, delay):
+        self.mastodon.toot('carotenslot発動！！')
+        time.sleep(delay)
+        self.mastodon.toot(self.caro + 'てん' + '!')
+        selected_nums = random.sample(self.num1,1)
+        selected_nums.extend(random.sample(self.num2,1))
 
-		for selected_num in selected_nums:
-			time.sleep(delay)
-			self.mastodon.toot(self.caro + selected_num + '!')
-			if selected_num != 'かろてん':
-				return False 
-		
-		return True
+        for selected_num in selected_nums:
+            time.sleep(delay)
+            self.mastodon.toot(self.caro + selected_num + '!')
+            #print(self.caro + selected_num + '!')
+            
+            if selected_num != 'てん':
+                return False 
 
-			
-	def congratulations(self):
-		self.mastodon.toot('おめでとう！！')
+        return True
+
+
+    def congratulations(self):
+        self.mastodon.toot('おめでとう！！')
+        #print('おめでとう！！')
 
 client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt"
 access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt"
@@ -46,8 +51,8 @@ carotenslot = Carotenslot()
 result = carotenslot.run(delay)
 
 if result:
-	carotenslot.congratulations()
+    carotenslot.congratulations()
 
-	
-#	mastodon.toot("ﾊﾂﾐﾈｸ") #ここを変える
+
+#       mastodon.toot("ﾊﾂﾐﾈｸ") #ここを変える
 # mastodon.toot("ﾊ゛ﾂ゛ﾈ゛ﾐ゛ｸ゛") #ここを変える
