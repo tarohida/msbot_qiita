@@ -6,8 +6,8 @@ sys.path.append('/usr/lib/python3.6/site-packages/')
 from mastodon import Mastodon
 
 mastodon = Mastodon(
-	client_id="/root/python/msbot_qiita/account_info/cred.txt", 
-	access_token="/root/python/msbot_qiita/account_info/auth.txt",
+	client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt", 
+	access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt",
 	api_base_url = "https://qiitadon.com") #インスタンス
 num = random.randrange(1, 100)
 if num <= 39:
