@@ -19,7 +19,7 @@ class Carotenslot:
             api_base_url = "https://qiitadon.com") #インスタンス
 
     def run(self, delay):
-        self.mastodon.toot('carotenslot発動！！')
+        self.mastodon.toot('かろてんすろっと発動！！')
         time.sleep(delay)
         self.mastodon.toot(self.caro + 'てん' + '!')
         selected_nums = random.sample(self.num1,1)
