@@ -1,6 +1,6 @@
 import sys
 import random
-import time 
+import time
 
 sys.path.append('/usr/lib/python3.6/site-packages/')
 
@@ -8,14 +8,14 @@ from mastodon import Mastodon
 
 class Carotenslot:
 
-    num1 = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん']
-    num2 = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん','てん']
+    num1 = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん']
+    num2 = ['ぜろ','わん','つー','すりー','ふぉー','ふぁいぶ','しっくす','せぶん','えいと','ないん','てん']
     caro = 'かろ'
 
     def __init__(self):
         self.mastodon = Mastodon(
-            client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt", 
-            access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt",
+	    client_id="/home/taro/python/msbot_qiita/account_info/cred.txt",
+	    access_token="/home/taro/python/msbot_qiita/account_info/auth.txt",
             api_base_url = "https://qiitadon.com") #インスタンス
 
     def run(self, delay):
@@ -29,9 +29,9 @@ class Carotenslot:
             time.sleep(delay)
             self.mastodon.toot(self.caro + selected_num + '!')
             #print(self.caro + selected_num + '!')
-            
+
             if selected_num != 'てん':
-                return False 
+                return False
 
         return True
 
@@ -39,10 +39,6 @@ class Carotenslot:
     def congratulations(self):
         self.mastodon.toot('おめでとう！！')
         #print('おめでとう！！')
-
-client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt"
-access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt"
-api_base_url = "https://qiitadon.com"
 
 delay = 3
 
