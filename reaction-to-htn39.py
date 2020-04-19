@@ -8,8 +8,8 @@ from mastodon import Mastodon
 
 #initialize
 mastodon = Mastodon(
-    client_id="/home/mutsu/python/msbot_qiita/account_info/cred.txt", 
-    access_token="/home/mutsu/python/msbot_qiita/account_info/auth.txt",
+    client_id="/home/taro/msbot_qiita/account_info/cred.txt",
+    access_token="/home/taro/msbot_qiita/account_info/auth.txt",
     api_base_url = "https://qiitadon.com")
 
 #get_local_toot
@@ -20,7 +20,7 @@ for toot in toots:
     #pprint.pprint(toot)
     #print(toot.content)
     if toot.account.id == 45761:
-        exit()
+        continue
 
     if toot.content == '<p>ﾊﾂﾈﾐｸ</p>':
         mastodon.status_reblog(toot.id)
