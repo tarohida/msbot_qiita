@@ -17,8 +17,6 @@ toots = mastodon.timeline_local(limit=10)
 
 #reaction
 for toot in toots:
-    #pprint.pprint(toot)
-    #print(toot.content)
     if toot.account.id == 45761:
         continue
 

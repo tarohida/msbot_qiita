@@ -14,8 +14,8 @@ class Carotenslot:
 
     def __init__(self):
         self.mastodon = Mastodon(
-	    client_id="/home/taro/python/msbot_qiita/account_info/cred.txt",
-	    access_token="/home/taro/python/msbot_qiita/account_info/auth.txt",
+	    client_id="/home/taro/msbot_qiita/account_info/cred.txt",
+	    access_token="/home/taro/msbot_qiita/account_info/auth.txt",
             api_base_url = "https://qiitadon.com") #インスタンス
 
     def run(self, delay):
@@ -40,15 +40,9 @@ class Carotenslot:
         self.mastodon.toot('おめでとう！！')
         #print('おめでとう！！')
 
-delay = 3
-
-carotenslot = Carotenslot()
-
-result = carotenslot.run(delay)
-
-if result:
-    carotenslot.congratulations()
-
-
-#       mastodon.toot("ﾊﾂﾐﾈｸ") #ここを変える
-# mastodon.toot("ﾊ゛ﾂ゛ﾈ゛ﾐ゛ｸ゛") #ここを変える
+if __name__ == "__main__":
+    delay = 3
+    carotenslot = Carotenslot()
+    result = carotenslot.run(delay)
+    if result:
+        carotenslot.congratulations()
