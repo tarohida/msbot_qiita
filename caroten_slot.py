@@ -1,10 +1,6 @@
-import sys
+from mastodon import Mastodon
 import random
 import time
-
-sys.path.append('/usr/lib/python3.6/site-packages/')
-
-from mastodon import Mastodon
 
 class Carotenslot:
 
@@ -14,8 +10,8 @@ class Carotenslot:
 
     def __init__(self):
         self.mastodon = Mastodon(
-	    client_id="/home/taro/msbot_qiita/account_info/cred.txt",
-	    access_token="/home/taro/msbot_qiita/account_info/auth.txt",
+	    client_id="./account_info/cred.txt",
+	    access_token="./account_info/auth.txt",
             api_base_url = "https://qiitadon.com") #インスタンス
 
     def run(self, delay):
@@ -28,7 +24,6 @@ class Carotenslot:
         for selected_num in selected_nums:
             time.sleep(delay)
             self.mastodon.toot(self.caro + selected_num + '!')
-            #print(self.caro + selected_num + '!')
 
             if selected_num != 'てん':
                 return False
@@ -38,7 +33,6 @@ class Carotenslot:
 
     def congratulations(self):
         self.mastodon.toot('おめでとう！！')
-        #print('おめでとう！！')
 
 if __name__ == "__main__":
     delay = 3
@@ -46,3 +40,4 @@ if __name__ == "__main__":
     result = carotenslot.run(delay)
     if result:
         carotenslot.congratulations()
+

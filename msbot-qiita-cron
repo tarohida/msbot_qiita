@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+
+9 3 * * * ubuntu cd ~/msbot_qiita/; source ./venv/bin/activate; python ./toot-htn39.py 2>&1 | logger -t 'msbot-qiita'
+*/5 * * * * ubuntu cd ~/msbot_qiita/; source ./venv/bin/activate; python ./reaction.py 2>&1 | logger -t 'msbot-qiita'
+
