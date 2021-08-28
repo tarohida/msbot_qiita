@@ -151,3 +151,5 @@ pip-selfcheck.json
 # for Mastodon.py
 account_info
 
+# editor
+.idea
