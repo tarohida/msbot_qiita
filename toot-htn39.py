@@ -14,16 +14,14 @@ mastodon = Mastodon(
     api_base_url="https://qiitadon.com")
 
 if Hatsune().is_birthday():
-    message = 'ﾊﾋﾟﾊﾞﾐｸ :birthday:'
     mastodon.status_post(
-        message,
+        'ﾊﾋﾟﾊﾞﾐｸ :birthday:',
         visibility=visibility
     )
 
 num = random.randrange(1, 100)
 if num <= 39:
-    message = 'ﾊﾂﾈﾐｸ'
     mastodon.status_post(
-        message,
+        'ﾊﾂﾈﾐｸ',
         visibility=visibility
     )
