@@ -8,8 +8,12 @@ mastodon = Mastodon(
     api_base_url="https://qiitadon.com")
 
 if Hatsune().is_birthday():
-    mastodon.toot("ﾊﾋﾟﾊﾞﾐｸ")
+    message = 'ﾊﾋﾟﾊﾞﾐｸ'
+    # mastodon.toot(message)
+    print(message)
 
 num = random.randrange(1, 100)
 if num <= 39:
-    mastodon.toot("ﾊﾂﾈﾐｸ")
+    message = 'ﾊﾂﾈﾐｸ'
+    # mastodon.toot(message)
+    print(message)
