@@ -8,7 +8,7 @@ mastodon = Mastodon(
     api_base_url="https://qiitadon.com")
 
 if Hatsune().is_birthday():
-    message = 'ﾊﾋﾟﾊﾞﾐｸ'
+    message = 'ﾊﾋﾟﾊﾞﾐｸ :birthday:'
     # mastodon.toot(message)
     print(message)
 
