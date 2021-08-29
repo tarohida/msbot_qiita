@@ -16,5 +16,5 @@ class IsHatsuneBirthdayService:
     def is_day_equal(self):
         return self.birthday.day == self.day.day
 
-    def set_date(self, date):
-        self.day = date
+    def set_date(self, day):
+        self.day = day
