@@ -7,8 +7,7 @@ mastodon = Mastodon(
     access_token="./account_info/auth.txt",
     api_base_url="https://qiitadon.com")
 
-Hatsune = Hatsune()
-if Hatsune.is_birthday():
+if Hatsune().is_birthday():
     mastodon.toot("ﾊﾋﾟﾊﾞﾐｸ")
 
 num = random.randrange(1, 100)
