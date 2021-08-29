@@ -2,11 +2,11 @@ from mastodon import Mastodon
 from libs.IsHatsuneBirthdayService import IsHatsuneBirthdayService as Hatsune
 import random
 
-develop = False
-if develop is True:
-    visibility = 'direct'
-else:
+production = True
+if production:
     visibility = None
+else:
+    visibility = 'direct'
 
 mastodon = Mastodon(
     client_id="./account_info/cred.txt",
