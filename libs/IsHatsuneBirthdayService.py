@@ -1,11 +1,11 @@
-import datetime
+from datetime import date
 from HatsuneBirthday import HatsuneBirthday
 
 
 class IsHatsuneBirthdayService:
     def __init__(self):
         self.birthday = HatsuneBirthday()
-        self.day = datetime.datetime.now()
+        self.day = date.today()
 
     def is_birthday(self):
         return self.is_month_equal() and self.is_day_equal()
