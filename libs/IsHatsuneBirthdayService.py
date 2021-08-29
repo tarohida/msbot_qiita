@@ -1,5 +1,5 @@
 from datetime import date
-from HatsuneBirthday import HatsuneBirthday
+from libs.HatsuneBirthday import HatsuneBirthday
 
 
 class IsHatsuneBirthdayService:
