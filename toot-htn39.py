@@ -1,5 +1,5 @@
 from mastodon import Mastodon
-from libs.IsHatsuneBirthdayService import IsHatsuneBirthdayService
+from libs.IsHatsuneBirthdayService import IsHatsuneBirthdayService as Hatsune
 import random
 
 mastodon = Mastodon(
@@ -7,8 +7,8 @@ mastodon = Mastodon(
     access_token="./account_info/auth.txt",
     api_base_url="https://qiitadon.com")
 
-hatsune = IsHatsuneBirthdayService()
-if hatsune.is_birthday():
+Hatsune = Hatsune()
+if Hatsune.is_birthday():
     mastodon.toot("ﾊﾋﾟﾊﾞﾐｸ")
 
 num = random.randrange(1, 100)
