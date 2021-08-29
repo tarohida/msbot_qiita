@@ -2,8 +2,8 @@ from mastodon import Mastodon
 from libs.IsHatsuneBirthdayService import IsHatsuneBirthdayService as Hatsune
 import random
 
-debug = True
-if debug is True:
+develop = False
+if develop is True:
     visibility = 'direct'
 else:
     visibility = None
