@@ -4,17 +4,17 @@ from IsHatsuneBirthdayService import IsHatsuneBirthdayService
 
 
 class TestIsHatsuneBirthdayService(TestCase):
-    def test_is_birthday(self):
+    def test_method_is_birthday_when_today_return_False(self):
         service = IsHatsuneBirthdayService()
         self.assertFalse(service.is_birthday())
 
-    def test_is_birthday_2(self):
+    def test_method_is_birthday_when_start_of_day_return_True(self):
         service = IsHatsuneBirthdayService()
         day = datetime.datetime(2021, 8, 31, hour=0, minute=0, second=0, microsecond=0)
         service.set_date(day)
         self.assertTrue(service.is_birthday())
 
-    def test_is_birthday_3(self):
+    def test_method_is_birthday_when_end_of_day_return_True(self):
         service = IsHatsuneBirthdayService()
         day = datetime.datetime(2021, 8, 31, hour=23, minute=59, second=59, microsecond=0)
         service.set_date(day)
