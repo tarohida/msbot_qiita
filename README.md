@@ -34,7 +34,11 @@ mkdir ./account_info
 touch ./account_info/{auth,cred}.txt
 ```
 
-`account_info` ディレクトリ以下のファイルは空ファイルだとエラーが出るので、 Mastodon.py のドキュメントを確認して setup する
+`register_app.py` にログイン情報を記載した上で、以下のように実行する。
+
+```
+python register_app.py
+```
 
 テスト実行して、エラーが出力されないか確認する。
 
