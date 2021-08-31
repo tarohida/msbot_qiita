@@ -18,6 +18,7 @@ if Hatsune().is_birthday():
         'ﾊﾋﾟﾊﾞﾐｸ 🎂',
         visibility=visibility
     )
+    exit(0)
 
 num = random.randrange(1, 100)
 if num <= 39:
