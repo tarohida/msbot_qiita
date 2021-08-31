@@ -15,7 +15,7 @@ mastodon = Mastodon(
 
 if Hatsune().is_birthday():
     mastodon.status_post(
-        'ﾊﾋﾟﾊﾞﾐｸ :birthday:',
+        'ﾊﾋﾟﾊﾞﾐｸ 🎂',
         visibility=visibility
     )
 
